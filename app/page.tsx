@@ -8,13 +8,15 @@ import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <>
       <Navbar />
-      <About />
-      <Header />
-      <Featured />
-      <Footer />
-      <Gallery />
-    </main>
+      <main className={styles.main}>
+        <Header />
+        <Featured />
+        <About />
+        <Gallery />
+        <Footer />
+      </main>
+    </>
   );
 }
