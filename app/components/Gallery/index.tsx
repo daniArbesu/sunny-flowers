@@ -8,7 +8,7 @@ import { bai_jamjuree } from '@/app/utils/fonts';
 const Gallery = () => {
   const [activeImage, setActiveImage] = useState(1);
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.wrapper} data-scroll-section>
       <div className={styles.gallery}>
         <div className={`${styles.counter} ${bai_jamjuree.className}`}>
           <span>{activeImage}</span>

@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 const About = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-scroll-section>
       <SectionHeader title="about" />
       <p>
         Sunny Flowers is a blog about flowers and the floral designers who make

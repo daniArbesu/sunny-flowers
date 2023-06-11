@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 const Header = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} data-scroll-section>
       <ul className={`${styles.menu} ${syncopate.className}`}>
         <li>Intro</li>
         <li>About</li>

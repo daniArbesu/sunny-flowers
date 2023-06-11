@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const Footer = () => {
   return (
-    <section className={styles.footer}>
+    <section className={styles.footer} data-scroll-section>
       <SectionHeader title="Made In" />
       <h2
         className={`${styles.location} ${bodoni_moda.className}`}
