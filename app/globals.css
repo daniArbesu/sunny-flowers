@@ -12,3 +12,11 @@ body {
 section {
   padding: 100px 0;
 }
+
+.lineParent {
+  overflow: hidden;
+}
+
+.lineChildren {
+  transform: translate(0, 500px);
+}

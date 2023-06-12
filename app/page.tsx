@@ -13,7 +13,7 @@ import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 export default function Home() {
   const [loader, setLoader] = useState(true);
 
-  const [timer, setTimer] = useState(3);
+  const [timer, setTimer] = useState(2);
   const id = useRef(0);
   const containerRef = useRef<HTMLElement>(null);
 
