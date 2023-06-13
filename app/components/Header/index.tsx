@@ -2,10 +2,11 @@
 import { bai_jamjuree, syncopate } from '@/app/utils/fonts';
 import styles from './styles.module.css';
 import { useEffect } from 'react';
-import SplitText from '../../utils/Split3.min.js';
+//import SplitText from '../../utils/Split3.min';
+import SplitText from 'gsap/SplitText';
 import { gsap } from 'gsap';
 
-gsap.registerPlugin(SplitText);
+// gsap.registerPlugin(SplitText);
 
 const Header = () => {
   useEffect(() => {
