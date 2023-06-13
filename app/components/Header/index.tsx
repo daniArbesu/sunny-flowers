@@ -3,7 +3,6 @@ import { bai_jamjuree, syncopate } from '@/app/utils/fonts';
 import styles from './styles.module.css';
 import { useEffect } from 'react';
 import SplitText from '../../utils/SplitText';
-// import SplitText from 'gsap/SplitText';
 import { gsap } from 'gsap';
 
 // gsap.registerPlugin(SplitText);
