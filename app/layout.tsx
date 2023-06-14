@@ -1,5 +1,6 @@
 import './reset.css';
 import './globals.css';
+import StyledComponentsRegistry from './registry';
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,8 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <StyledComponentsRegistry>
+      <html lang="en">
+        <body>{children}</body>
+      </html>
+    </StyledComponentsRegistry>
   );
 }
