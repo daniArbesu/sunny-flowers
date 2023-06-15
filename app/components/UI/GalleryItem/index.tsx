@@ -16,7 +16,7 @@ const GalleryItem = ({
   index,
 }: Props) => {
   return (
-    <article className={styles.wrapper}>
+    <article className={styles.wrapper} id="gallery-item-wrapper">
       <div />
       <div className={styles.item}>
         <div className={`${styles.info} ${bai_jamjuree.className}`}>
