@@ -5,18 +5,19 @@ import { gsap } from 'gsap';
 import { styled } from 'styled-components';
 import useOnScreen from '@/app/hooks/useOnScreen';
 
-const AboutSection = styled.section`
+interface Props {
+  reveal: boolean;
+}
+
+const AboutSection = styled.section<Props>`
   p {
     font-size: 70px;
     line-height: 1.12;
+    opacity: ${({ reveal }) => (reveal ? 1 : 0)};
 
-    > div {
+    div {
       opacity: 0;
       transform: translate(0);
-    }
-
-    &.is-reveal {
-      opacity: 1;
     }
   }
 `;
@@ -24,24 +25,32 @@ const AboutSection = styled.section`
 const About = () => {
   const ref = useRef<HTMLParagraphElement>(null);
   const [reveal, setReveal] = useState(false);
+  const onScreen = useOnScreen(ref);
 
-  const onScrean = useOnScreen(ref);
   useEffect(() => {
-    const split = new SplitText('#blog-description', {
-      type: 'lines',
-    });
+    if (onScreen) {
+      setReveal(onScreen);
+    }
+  }, [onScreen]);
 
-    gsap.to(split.lines, {
-      duration: 1,
-      y: -20,
-      opacity: 1,
-      stagger: 0.1,
-      ease: 'power2',
-    });
-  }, []);
+  useEffect(() => {
+    if (reveal) {
+      const split = new SplitText('#blog-description', {
+        type: 'lines',
+      });
+
+      gsap.to(split.lines, {
+        duration: 1,
+        y: -20,
+        opacity: 1,
+        stagger: 0.1,
+        ease: 'power2',
+      });
+    }
+  }, [reveal]);
 
   return (
-    <AboutSection data-scroll-section>
+    <AboutSection reveal={reveal} data-scroll-section>
       <SectionHeader title="about" />
       <p ref={ref} id="blog-description">
         Sunny Flowers is a blog about flowers and the floral designers who make
